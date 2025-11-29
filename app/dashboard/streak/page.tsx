@@ -515,7 +515,7 @@ export default function StreakPage() {
                           {isCompleted && <Check size={18} />}
                         </motion.button>
                         <div className="flex-1">
-                          <h4 className={`font-semibold ${isCompleted ? "text-green-700 dark:text-green-400 line-through" : "text-foreground"}`}>
+                          <h4 className={`font-semibold ${isCompleted ? "text-green-600 dark:text-green-400 line-through" : "text-foreground"}`}>
                             {activity.name}
                           </h4>
                           <p className="text-sm text-muted-foreground">
