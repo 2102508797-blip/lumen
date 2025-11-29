@@ -172,40 +172,6 @@ export default function Navigation() {
             })}
           </ul>
         </nav>
-
-        {/* Logo at Extreme Bottom - Fixed to viewport bottom */}
-        <div className="p-4 border-t border-primary/20 bg-primary">
-          <Link href="/dashboard">
-            {!isCollapsed ? (
-              <motion.div 
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-primary/60 transition-colors cursor-pointer"
-              >
-                <motion.div 
-                  whileHover={{ rotate: 360 }}
-                  transition={{ duration: 0.5 }}
-                  className="w-8 h-8 bg-secondary rounded-md flex items-center justify-center font-bold text-sm flex-shrink-0"
-                >
-                  SC
-                </motion.div>
-                <div>
-                  <h2 className="font-bold text-sm">Luman</h2>
-                  <p className="text-xs text-primary-foreground/60">Home</p>
-                </div>
-              </motion.div>
-            ) : (
-              <motion.div 
-                whileHover={{ rotate: 360, scale: 1.1 }}
-                transition={{ duration: 0.5 }}
-                className="w-10 h-10 bg-secondary rounded-md flex items-center justify-center font-bold text-sm mx-auto cursor-pointer"
-                title="Go to Home"
-              >
-                SC
-              </motion.div>
-            )}
-          </Link>
-        </div>
       </motion.aside>
 
       {/* Mobile Overlay */}
