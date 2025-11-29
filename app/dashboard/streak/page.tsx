@@ -90,7 +90,6 @@ export default function StreakPage() {
     setNewActivityDuration("30")
     setNewActivityUnit("minutes")
     setIsAddingActivity(false)
-    toast.success("🎯 Activity added to your streak goals!")
   }
 
   const handleDeleteActivity = (activityId: string) => {
