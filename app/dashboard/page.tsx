@@ -73,14 +73,8 @@ export default function DashboardPage() {
   }
 
   const handleDeleteBlock = (id: string) => {
-    const blockToDelete = timeBlocks.find(b => b.id === id)
     setTimeBlocks((prev) => prev.filter((block) => block.id !== id))
     setStatsKey(prev => prev + 1)
-    
-    // Show toast
-    toast.success(`✓ "${blockToDelete?.title || 'Block'}" removed from your schedule`, {
-      duration: 2500,
-    })
   }
 
   const handleUpdateBlock = (id: string, updates: Omit<TimeBlock, "id">) => {
@@ -89,11 +83,6 @@ export default function DashboardPage() {
     setEditingBlock(null)
     setDraftRange(null)
     setStatsKey(prev => prev + 1)
-    
-    // Show success toast
-    toast.success("✓ Time block updated successfully!", {
-      duration: 2500,
-    })
   }
 
   const previousMonth = () => {
