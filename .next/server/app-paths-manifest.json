@@ -1,0 +1,12 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/chat/route": "app/api/chat/route.js",
+  "/dashboard/ai/page": "app/dashboard/ai/page.js",
+  "/dashboard/inbox/page": "app/dashboard/inbox/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/profile/page": "app/dashboard/profile/page.js",
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
+  "/dashboard/weekly-todo/page": "app/dashboard/weekly-todo/page.js",
+  "/page": "app/page.js"
+}

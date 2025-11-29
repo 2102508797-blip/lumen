@@ -1,0 +1,7 @@
+{
+  "/dashboard/ai/page": "app/dashboard/ai/page.js",
+  "/dashboard/inbox/page": "app/dashboard/inbox/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/dashboard/settings/page": "app/dashboard/settings/page.js",
+  "/page": "app/page.js"
+}
