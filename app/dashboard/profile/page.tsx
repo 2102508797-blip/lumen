@@ -1,10 +1,11 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { User, Mail, LogOut, Edit2, Camera, Award, Calendar as CalendarIcon, Phone, Briefcase, Heart, Building, Hash } from "lucide-react"
+import { User, Mail, LogOut, Edit2, Camera, Award, Calendar as CalendarIcon, Phone, Briefcase, Heart, Building, Hash, Palette } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import toast from "react-hot-toast"
+import ThemeToggleSimple from "@/components/theme/theme-toggle-simple"
 
 interface UserData {
   id: string
