@@ -592,6 +592,26 @@ export default function ProfilePage() {
           </div>
         </motion.div>
 
+        {/* Appearance Settings */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45 }}
+          className="bg-card rounded-xl shadow-lg p-8 border border-border"
+        >
+          <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+            <Palette size={20} />
+            Appearance
+          </h3>
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="font-semibold text-foreground mb-1">Theme</p>
+              <p className="text-sm text-muted-foreground">Switch between light and dark mode</p>
+            </div>
+            <ThemeToggleSimple />
+          </div>
+        </motion.div>
+
         {/* Save Button */}
         <AnimatePresence>
           {isEditing && (
