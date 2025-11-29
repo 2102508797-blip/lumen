@@ -80,7 +80,7 @@ export default function Navigation() {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={`${
           isMobileMenuOpen ? "block" : "hidden"
-        } lg:block fixed top-16 lg:top-0 left-0 bottom-0 bg-primary text-primary-foreground transition-all duration-200 z-40 h-screen flex flex-col`}
+        } lg:block fixed top-16 lg:top-0 left-0 bottom-0 bg-primary text-primary-foreground transition-all duration-200 z-40 h-screen flex flex-col overflow-hidden`}
       >
         {/* User Profile Header */}
         <motion.div 
