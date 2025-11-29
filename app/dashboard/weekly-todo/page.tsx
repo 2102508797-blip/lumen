@@ -68,20 +68,16 @@ export default function WeeklyTodoPage() {
     setTodos(todos.map((t) => (t.id === id ? { ...t, completed: !t.completed } : t)))
     
     if (!todo?.completed) {
-      toast.success("🎉 Task completed! Keep it up!")
-      
       // Check for milestones
       const completedCount = todos.filter(t => t.completed).length + 1
       if (completedCount % 10 === 0) {
         setShowCelebration(true)
-        toast.success(`🏆 Milestone! ${completedCount} tasks completed!`, { duration: 4000 })
       }
     }
   }
 
   const handleDeleteTodo = (id: string) => {
     setTodos(todos.filter((todo) => todo.id !== id))
-    toast.success("🗑️ Task deleted")
   }
 
   const getPriorityColor = (priority: string) => {
