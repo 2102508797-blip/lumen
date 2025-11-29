@@ -137,8 +137,8 @@ export default function StreakPage() {
     return todayLog?.completedActivities.includes(activityId) || false
   }
 
-  // Calculate current streak
-  const calculateStreak = () => {
+  // Calculate current streak (overall - all activities)
+  const calculateOverallStreak = () => {
     if (streakData.activities.length === 0) return 0
     
     const sortedLogs = [...streakData.logs].sort((a, b) => b.date.localeCompare(a.date))
@@ -146,7 +146,6 @@ export default function StreakPage() {
     let checkDate = new Date()
     
     for (let i = 0; i < 365; i++) {
-      const dateString = getTodayString()
       const year = checkDate.getFullYear()
       const month = String(checkDate.getMonth() + 1).padStart(2, '0')
       const day = String(checkDate.getDate()).padStart(2, '0')
@@ -168,7 +167,34 @@ export default function StreakPage() {
     return streak
   }
 
-  const currentStreak = calculateStreak()
+  // Calculate streak for a specific activity
+  const calculateActivityStreak = (activityId: string) => {
+    const sortedLogs = [...streakData.logs].sort((a, b) => b.date.localeCompare(a.date))
+    let streak = 0
+    let checkDate = new Date()
+    
+    for (let i = 0; i < 365; i++) {
+      const year = checkDate.getFullYear()
+      const month = String(checkDate.getMonth() + 1).padStart(2, '0')
+      const day = String(checkDate.getDate()).padStart(2, '0')
+      const checkDateString = `${year}-${month}-${day}`
+      
+      const log = sortedLogs.find(l => l.date === checkDateString)
+      
+      // Check if this specific activity was completed
+      if (log && log.completedActivities.includes(activityId)) {
+        streak++
+      } else if (i > 0) {
+        break
+      }
+      
+      checkDate.setDate(checkDate.getDate() - 1)
+    }
+    
+    return streak
+  }
+
+  const currentStreak = calculateOverallStreak()
   const todayProgress = streakData.activities.length > 0 
     ? Math.round((todayLog?.completedActivities.length || 0) / streakData.activities.length * 100)
     : 0
