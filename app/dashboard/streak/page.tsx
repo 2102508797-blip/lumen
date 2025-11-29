@@ -93,7 +93,6 @@ export default function StreakPage() {
   }
 
   const handleDeleteActivity = (activityId: string) => {
-    const activity = streakData.activities.find(a => a.id === activityId)
     setStreakData(prev => ({
       activities: prev.activities.filter(a => a.id !== activityId),
       logs: prev.logs.map(log => ({
@@ -101,7 +100,6 @@ export default function StreakPage() {
         completedActivities: log.completedActivities.filter(id => id !== activityId)
       }))
     }))
-    toast.success(`🗑️ "${activity?.name}" removed from streak`)
   }
 
   const handleToggleActivity = (activityId: string) => {
