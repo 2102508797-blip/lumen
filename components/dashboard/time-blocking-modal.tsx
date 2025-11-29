@@ -48,12 +48,10 @@ export default function TimeBlockingModal({
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
-    // convert back to ISO string for storage
-    const isoDate = new Date(dateInput + "T00:00:00").toISOString()
-
+    // Store date as YYYY-MM-DD string to avoid timezone issues
     const payload: Omit<TimeBlock, "id"> = {
       title,
-      date: isoDate,
+      date: dateInput,
       startTime,
       endTime,
       description,
