@@ -173,8 +173,8 @@ export default function Navigation() {
           </ul>
         </nav>
 
-        {/* Logo at Bottom - Pushed to absolute bottom */}
-        <div className="mt-auto p-4 border-t border-primary/20">
+        {/* Logo at Extreme Bottom - Fixed to viewport bottom */}
+        <div className="p-4 border-t border-primary/20 bg-primary">
           <Link href="/dashboard">
             {!isCollapsed ? (
               <motion.div 
