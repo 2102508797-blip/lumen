@@ -44,6 +44,7 @@ export default function DashboardPage() {
     if (stored) {
       setTimeBlocks(JSON.parse(stored))
     }
+    setClockFormat(getClockFormat())
   }, [])
 
   // Save time blocks to localStorage
