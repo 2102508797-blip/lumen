@@ -53,7 +53,7 @@ export default function Navigation() {
         animate={{ y: 0, opacity: 1 }}
         className="lg:hidden bg-primary text-primary-foreground p-4 flex items-center justify-between"
       >
-        <Link href="/dashboard/profile" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
+        <Link href="/dashboard" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
           <motion.div 
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
