@@ -547,7 +547,7 @@ export default function StreakPage() {
             className="mt-6 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-xl shadow-md p-6 border border-blue-200 dark:border-blue-800"
           >
             <h3 className="font-bold text-foreground mb-3 flex items-center gap-2">
-              <Trophy className="w-5 h-5 text-blue-600" />
+              <Trophy className="w-5 h-5 text-blue-600 dark:text-blue-400" />
               Streak Tips
             </h3>
             <ul className="space-y-2 text-sm text-foreground/80">
