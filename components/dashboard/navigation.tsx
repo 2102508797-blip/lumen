@@ -50,16 +50,13 @@ export default function Navigation() {
           </motion.div>
           <span className="font-bold cursor-pointer">Luman</span>
         </Link>
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <motion.button 
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
-            className="text-primary-foreground"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
-        </div>
+        <motion.button 
+          whileTap={{ scale: 0.9 }}
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
+          className="text-primary-foreground"
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </motion.button>
       </motion.div>
 
       {/* Desktop Sidebar */}
