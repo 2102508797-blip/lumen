@@ -42,14 +42,21 @@ export default function DashboardPage() {
   useEffect(() => {
     const stored = localStorage.getItem("timeBlocks")
     if (stored) {
-      setTimeBlocks(JSON.parse(stored))
+      try {
+        const parsed = JSON.parse(stored)
+        setTimeBlocks(parsed)
+      } catch (e) {
+        console.error("Failed to parse time blocks:", e)
+      }
     }
     setClockFormat(getClockFormat())
   }, [])
 
-  // Save time blocks to localStorage
+  // Save time blocks to localStorage whenever they change
   useEffect(() => {
-    localStorage.setItem("timeBlocks", JSON.stringify(timeBlocks))
+    if (timeBlocks.length > 0) {
+      localStorage.setItem("timeBlocks", JSON.stringify(timeBlocks))
+    }
   }, [timeBlocks])
 
   const handleAddBlock = (block: Omit<TimeBlock, "id">) => {
