@@ -22,6 +22,8 @@ type StreakData = {
   logs: DailyLog[]
 }
 
+type HistoryView = "week" | "month" | "year"
+
 export default function StreakPage() {
   const [streakData, setStreakData] = useState<StreakData>({
     activities: [],
