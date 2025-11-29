@@ -14,7 +14,6 @@ const navItems = [
   { href: "/dashboard/inbox", label: "Inbox", icon: Mail },
   { href: "/dashboard/ai", label: "AI Assistant", icon: Sparkles },
   { href: "/dashboard/profile", label: "Profile", icon: User },
-  { href: "/dashboard/settings", label: "Settings", icon: Settings },
 ]
 
 export default function Navigation() {
