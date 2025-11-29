@@ -10,6 +10,7 @@ import MotivationalHeader from "@/components/dynamic/motivational-header"
 import ProductivityStats from "@/components/dynamic/productivity-stats"
 import FloatingTips from "@/components/dynamic/floating-tips"
 import CelebrationConfetti from "@/components/dynamic/celebration-confetti"
+import { formatTime, getClockFormat } from "@/lib/time-utils"
 
 type TimeBlock = {
   id: string
