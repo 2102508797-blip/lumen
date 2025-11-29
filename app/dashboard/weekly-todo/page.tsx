@@ -30,13 +30,20 @@ export default function WeeklyTodoPage() {
   useEffect(() => {
     const stored = localStorage.getItem("weeklyTodos")
     if (stored) {
-      setTodos(JSON.parse(stored))
+      try {
+        const parsed = JSON.parse(stored)
+        setTodos(parsed)
+      } catch (e) {
+        console.error("Failed to parse todos:", e)
+      }
     }
   }, [])
 
-  // Save todos
+  // Save todos whenever they change
   useEffect(() => {
-    localStorage.setItem("weeklyTodos", JSON.stringify(todos))
+    if (todos.length > 0) {
+      localStorage.setItem("weeklyTodos", JSON.stringify(todos))
+    }
   }, [todos])
 
   const handleAddTodo = () => {
