@@ -104,9 +104,13 @@ export default function DashboardPage() {
 
   const activeDate = selectedDate || new Date()
 
-  const blocksForSelectedDate = timeBlocks.filter((block) =>
-    isSameDay(new Date(block.date), activeDate),
-  )
+  const blocksForSelectedDate = timeBlocks.filter((block) => {
+    // Handle both YYYY-MM-DD and ISO date formats
+    const blockDate = block.date.length === 10 
+      ? new Date(block.date + 'T12:00:00') // Add noon time to avoid timezone issues
+      : new Date(block.date)
+    return isSameDay(blockDate, activeDate)
+  })
 
   const startOfWeek = getStartOfWeek(activeDate)
   const weekDays = Array.from({ length: 7 }, (_, i) => addDays(startOfWeek, i))
