@@ -13,6 +13,7 @@ interface Settings {
   defaultBlockDuration: string
   autoBreaks: boolean
   breakDuration: string
+  clockFormat: "12h" | "24h"
 }
 
 export default function SettingsPage() {
@@ -24,6 +25,7 @@ export default function SettingsPage() {
     defaultBlockDuration: "90",
     autoBreaks: true,
     breakDuration: "15",
+    clockFormat: "24h",
   })
   const [isSaved, setIsSaved] = useState(false)
 
