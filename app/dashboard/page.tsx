@@ -302,7 +302,7 @@ export default function DashboardPage() {
                         <div>
                           <p className="font-medium text-foreground">{block.title}</p>
                           <p className="text-xs text-muted-foreground">
-                            {block.startTime} – {block.endTime}
+                            {formatTime(block.startTime, clockFormat)} – {formatTime(block.endTime, clockFormat)}
                           </p>
                         </div>
                         <button
