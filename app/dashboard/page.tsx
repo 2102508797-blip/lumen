@@ -358,7 +358,7 @@ export default function DashboardPage() {
                             .slice(0, 3)
                             .map((block) => (
                               <li key={block.id} className="text-[10px] text-foreground/80 truncate">
-                                {block.startTime} – {block.endTime} · {block.title}
+                                {formatTime(block.startTime, clockFormat)} – {formatTime(block.endTime, clockFormat)} · {block.title}
                               </li>
                             ))}
                           {blocks.length > 3 && (
