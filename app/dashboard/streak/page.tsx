@@ -507,7 +507,7 @@ export default function StreakPage() {
                           whileTap={{ scale: 0.9 }}
                           className={`flex-shrink-0 w-8 h-8 rounded-lg border-2 flex items-center justify-center transition-all ${
                             isCompleted
-                              ? "bg-green-500 border-green-500 text-white"
+                              ? "bg-green-500 dark:bg-green-600 border-green-500 dark:border-green-600 text-white"
                               : "border-border hover:border-primary"
                           }`}
                           data-testid={`activity-checkbox-${activity.id}`}
